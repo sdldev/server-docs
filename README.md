@@ -1,4 +1,3 @@
-# doc-pve
+# Server Docs 
 
-SDL DEV Documentation
-Build with nextra + NextJs
+Ini adalah dokumentasi untuk setting server dan apps yang ada di dalam server
