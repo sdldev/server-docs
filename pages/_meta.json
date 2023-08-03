@@ -1,0 +1,11 @@
+{
+  "index": "Introduction",
+  "server": "Server",
+  "client": "Client",
+  "networking": "Networking",
+
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}
