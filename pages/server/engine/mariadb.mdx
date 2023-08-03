@@ -1,0 +1,97 @@
+# MARIA DB
+
+## Install
+
+```js copy
+sudo apt update && sudo apt upgrade \
+curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash \
+sudo apt install mariadb-server mariadb-client -y 
+```
+
+## Configuration
+
+### REMOTE
+
+```js copy
+nano /etc/mysql/my.cnf
+```
+
+Un-comment port =3306 Save and exit the editor with "Ctrl+O", "Enter" and "Ctrl+X".
+
+```js copy
+nano /etc/mysql/mariadb.conf.d/50-server.cnf
+```
+
+Comment bind-address = 127.0.0.1 Save and exit the editor with "Ctrl+O", "Enter" and "Ctrl+X".
+
+
+### ENABLE
+```js copy
+sudo systemctl enable mariadb.service
+```
+```
+sudo systemctl start mariadb.service
+sudo systemctl restart mariadb.service
+sudo systemctl status mariadb.service
+```
+
+### secure_installation
+
+```js copy
+sudo mysql_secure_installation
+```
+Folow recomondation
+
+## Manage
+
+### Create 
+
+```js copy
+mysql -u root
+```
+
+#### CREATE USER 
+```js copy
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'scurepassword1234';
+```
+#### CREATE DATABASE
+```js copy
+CREATE DATABASE databasename;
+```
+
+#### REMOTE ACCESS
+
+Specific IP
+```js copy
+GRANT ALL ON databasename.* to 'username'@'192.168.10.2' IDENTIFIED BY 'scurepassword1234' WITH GRANT OPTION;
+```
+Specific CDIR
+```js copy
+GRANT ALL ON databasename.* to 'username'@'192.168.10.%' IDENTIFIED BY 'scurepassword1234' WITH GRANT OPTION;
+```
+
+#### APPLY PRIVILEGES
+```js copy
+FLUSH PRIVILEGES;
+EXIT;
+
+```
+## DUMP / EXPORT
+
+Backing Up Everything
+```js copy
+mariadb-dump -u root -p -x -A > /path/databasebackupname.sql
+```
+Just One Database
+```js copy
+mariadb-dump --user=databaseuser --password --lock-tables --databases databasename > /path/databasebackupname.sql
+
+```
+
+
+## IMPORT
+```js copy
+mysql -u root -p newdatabasename < databasesource.sql
+```
+
+## OPTIMATION

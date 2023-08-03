@@ -1,0 +1,44 @@
+import { Callout, FileTree } from 'nextra-theme-docs'
+
+# SSH
+## REMOTE
+### Generate an SSH Key
+pilih salah satu
+
+```js copy
+ssh-keygen -t rsa -b 4096
+```
+### Copy the key to a server
+
+```
+ssh-copy-id username@ipserver
+```
+
+### Test the new key
+
+```
+ssh -i ~/.ssh/id_rsa.pub username@ipserver
+```
+
+## COPY FILE (SCP)
+
+Berfungsi untuk copy file menggunakan SSH (seperti FTP)
+
+
+<Callout>
+Format
+```
+scp namafile.extension user@ip_server:path
+```
+Format Cutom Port
+```
+scp -p 221 namafile.extension user@ip_server:path
+```
+</Callout>
+
+```js copy
+  scp file.sql root@192.168.100.2:file/share
+```
+
+
+[source https://www.ssh.com/academy/ssh/copy-id#generate-an-ssh-key](https://www.ssh.com/academy/ssh/copy-id#generate-an-ssh-key) 

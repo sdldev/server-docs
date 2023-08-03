@@ -1,0 +1,8 @@
+{
+  "index": "index",
+  "mariadb": "Mariadb",
+  "nginx": "Nginx",
+  "php": "PHP",
+  "composer": "Composer",
+  "docker": "Docker"
+}

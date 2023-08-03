@@ -1,0 +1,33 @@
+# NEXTRA 
+Nextra adalah framework dari Next.js yang di gunakan untuk dokumentasi dan blog. Nextra memberikan kemudahan karena kode yang di gunakan menggunakan MDX
+
+Install dokumentasi pada Ubuntu/Debian
+
+```js copy
+sudo apt update && sudo apt upgrade
+```
+
+```js copy
+sudo apt install git curl apt install nodejs -y
+```
+```js copy
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+sudo apt-get install yarn -y
+```
+
+
+
+```js copy
+git clone https://github.com/sdldev/server-docs.git
+```
+
+```js copy
+cd server-docs \
+yarn install
+```
+
+```js copy
+yarn build
+```
