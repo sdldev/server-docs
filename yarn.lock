@@ -10,9 +10,9 @@
     regenerator-runtime "^0.13.11"
 
 "@braintree/sanitize-url@^6.0.2":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@braintree/sanitize-url/-/sanitize-url-6.0.3.tgz#dbe78ce0c3a6412d03acf8b9c920f6bd76ce81e6"
-  integrity sha512-g2hMyGSFYOvt0eeY2c2wrG1B6dVWF1be4vGxG9mI1BEHJuQm4Hie2HrooxYHBDRDi8hANIzQ8cuvBgxSVlQOTQ==
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@braintree/sanitize-url/-/sanitize-url-6.0.4.tgz#923ca57e173c6b232bbbb07347b1be982f03e783"
+  integrity sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==
 
 "@headlessui/react@^1.7.10":
   version "1.7.16"

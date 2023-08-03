@@ -1,7 +1,7 @@
 {
   "name": "server-docs",
   "version": "1.0.0",
-  "description": "Doc PVE sdldev, Build With Nextra",
+  "description": "server documentation, Build With Nextra",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
