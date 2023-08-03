@@ -1,5 +1,5 @@
 export default {
-    logo: <span>DOC PVE</span>,
+    logo: <span>SERVER DOC</span>,
     project: {
       link: 'https://github.com/sdldev/server-docs',
     },

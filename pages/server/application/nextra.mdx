@@ -8,7 +8,7 @@ sudo apt update && sudo apt upgrade
 ```
 
 ```js copy
-sudo apt install git curl apt install nodejs -y
+sudo apt install git curl apt install nodejs npm -y
 ```
 ```js copy
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -29,5 +29,12 @@ yarn install
 ```
 
 ```js copy
-yarn build
+yarn start
+```
+
+```js copy
+npm install -g pm2
+```
+```js copy
+pm2 start --name=server-docs npm -- start
 ```
