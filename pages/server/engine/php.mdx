@@ -1,0 +1,23 @@
+# PHP 8.2 DEBIAN 12
+
+## INSTALL
+
+```js copy
+sudo dpkg -l | grep php | tee packages.txt
+```
+```js copy
+sudo apt install apt-transport-https lsb-release ca-certificates wget -y
+```
+
+```js copy
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg 
+```
+```js copy
+sudo sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+```
+```js copy
+sudo apt update
+```
+```js copy
+sudo apt install php8.2-{fpm,bcmath,cli,common,mbstring,gd,intl,xml,mysql,zip,xsl,curl} -y
+```
