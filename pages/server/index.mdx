@@ -4,8 +4,24 @@
 
 
 ```js copy
-sudo apt install git wget nano unzip
+sudo apt install git wget nano unzip sudo
 ```
+
+## CREATE USER
+```js copy
+adduser user_name
+```
+
+```js copy
+usermod -aG sudo user_name
+usermod -aG www-data user_name
+```
+```js copy
+su - user_name
+```
+
+
+
 
 import { Card, Cards } from 'nextra-theme-docs'
 
