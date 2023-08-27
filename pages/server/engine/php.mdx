@@ -19,5 +19,6 @@ sudo sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > 
 sudo apt update
 ```
 ```js copy
-sudo apt install php8.2-{fpm,bcmath,cli,common,mbstring,gd,intl,xml,mysql,zip,xsl,curl} -y
-```
+
+sudo apt install php php-fpm php-mysql php-mbstring php-xml php-bcmath php-curl php8.2-{fpm,cli,common,gd,intl,zip,xsl} -y
+
