@@ -1,5 +1,6 @@
 
 
+```
 sudo mkdir /var/www/domain.com
 
 sudo mkdir /var/www/sidolapak.my.id
@@ -22,11 +23,13 @@ sudo nano /etc/nginx/sites-available/sidolapak.my.id
 sudo ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/
 
 chown -R www-data:www-data /usr/share/nginx/html
+```
 
 
 
 
 
+```
 server {
     listen       80;
     server_name  sidolapak.my.id;
@@ -58,3 +61,4 @@ server {
         deny all;
     }
 }
+```
