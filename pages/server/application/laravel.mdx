@@ -1,0 +1,60 @@
+
+
+sudo mkdir /var/www/domain.com
+
+sudo mkdir /var/www/sidolapak.my.id
+sudo mkdir /var/www/frontend
+sudo mkdir /var/www/backend
+sudo mkdir /var/www/vendor
+sudo mkdir /var/www/finance
+
+sudo chown -R $USER:$USER /var/www/sidolapak.my.id
+
+sudo chown -R $USER:$USER /var/www/frontend
+sudo chown -R $USER:$USER /var/www/backend
+sudo chown -R $USER:$USER /var/www/vendor
+sudo chown -R $USER:$USER /var/www/finance
+
+sudo chown -R www-data:www-data /var/www/sidolapak.my.id
+
+
+sudo nano /etc/nginx/sites-available/sidolapak.my.id
+sudo ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/
+
+chown -R www-data:www-data /usr/share/nginx/html
+
+
+
+
+
+server {
+    listen       80;
+    server_name  sidolapak.my.id;
+    root /usr/share/nginx/html;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    index index.php;
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
