@@ -1,0 +1,77 @@
+# Setting Timezone
+
+Cek setting
+```timedatectl```
+
+<Callout>
+```               Local time: Thu 2023-09-07 11:45:30 UTC
+           Universal time: Thu 2023-09-07 11:45:30 UTC
+                 RTC time: n/a
+                Time zone: Etc/UTC (UTC, +0000)
+System clock synchronized: yes
+              NTP service: inactive
+          RTC in local TZ: no
+```
+</Callout>
+
+cek list Timezone
+
+```timedatectl list-timezones```
+
+<Callout>
+```
+Africa/Abidjan
+Africa/Accra
+Africa/Addis_Ababa
+Africa/Algiers
+Africa/Asmara
+Africa/Asmera
+Africa/Bamako
+Africa/Bangui
+Africa/Banjul
+Africa/Bissau
+Africa/Blantyre
+Africa/Brazzaville
+Africa/Bujumbura
+....
+....
+Asia/Jakarta
+...
+...
+```
+</Callout>
+
+Set Timezone
+
+```sudo timedatectl set-timezone Asia/Jakarta```
+
+
+Cek setting
+```timedatectl```
+
+<Callout>
+```               Local time: Thu 2023-09-07 18:46:45 WIB
+           Universal time: Thu 2023-09-07 11:46:45 UTC
+                 RTC time: n/a
+                Time zone: Asia/Jakarta (WIB, +0700)
+System clock synchronized: yes
+              NTP service: inactive
+          RTC in local TZ: no
+
+```
+</Callout>
+
+Identify the timezone you want to configure, and create a symlink :
+
+```
+ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+```
+```
+date
+```
+
+<Callout>
+``` 
+Thu Sep  7 18:56:05 WIB 2023
+```
+</Callout>
