@@ -1,7 +1,7 @@
 {
   "index": "index",
-  "setting": "Setting",
   "remote": "Remote",
+  "setting": "Setting",
   "engine": "Engine",
   "hardening": "Hardening"
 
