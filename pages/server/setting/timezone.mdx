@@ -1,7 +1,11 @@
+import { Callout, FileTree } from 'nextra-theme-docs'
+
 # Setting Timezone
 
 Cek setting
-```timedatectl```
+```js copy
+timedatectl
+```
 
 <Callout>
 ```               Local time: Thu 2023-09-07 11:45:30 UTC
@@ -16,7 +20,9 @@ System clock synchronized: yes
 
 cek list Timezone
 
-```timedatectl list-timezones```
+```js copy
+timedatectl list-timezones
+```
 
 <Callout>
 ```
@@ -43,11 +49,15 @@ Asia/Jakarta
 
 Set Timezone
 
-```sudo timedatectl set-timezone Asia/Jakarta```
+```js copy
+sudo timedatectl set-timezone Asia/Jakarta
+```
 
 
 Cek setting
-```timedatectl```
+```js copy
+timedatectl
+```
 
 <Callout>
 ```               Local time: Thu 2023-09-07 18:46:45 WIB
@@ -63,10 +73,11 @@ System clock synchronized: yes
 
 Identify the timezone you want to configure, and create a symlink :
 
-```
+```js copy
 ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 ```
-```
+
+```js copy
 date
 ```
 
