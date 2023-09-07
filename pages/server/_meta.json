@@ -3,6 +3,6 @@
   "remote": "Remote",
   "setting": "Setting",
   "engine": "Engine",
-  "hardening": "Hardening"
-
+  "hardening": "Hardening",
+  "application": "Application"
 }
